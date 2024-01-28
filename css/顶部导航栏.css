@@ -1,0 +1,136 @@
+
+
+        /* 父亲盒子带着儿子们走 */
+        .top-Nav{
+            position: relative;
+            top: -465px;
+            /* position: fixed; */
+            /* border: 2px solid rgb(207, 100, 100); */
+            height: 50px;
+            background-color: rgb(54, 52, 52);
+            box-shadow: 5px 5px 50px;
+            border-radius: 10px;
+        }
+
+        .top-Nav a{
+            list-style: none;
+            color: rgb(229, 221, 221);
+            text-decoration: none;
+        }
+
+        /* 初始化左飘内容盒子 */
+        .second-Nav{
+            /* border: 1px solid black; */
+            height: 40px;
+            margin: 0;
+            padding-top: 7px;
+
+            /* justify-content: space-around; */
+        }
+
+        /* 儿子——右上飘内容盒子 */
+        .top-Nav .second-Nav li
+        {
+            list-style: none;
+            border: 2px solid rgb(130, 129, 130);
+            height: 30px;
+            width: 80px;
+            
+            /* 文字居中 */
+            text-align: center;
+            line-height: 30px;
+
+            /* 边框圆角 */
+            border-radius: 8px;
+
+            /* 让li盒子向右飘 */
+            float: right;
+
+            /* 控制li盒子之间的距离 */
+            margin: 0 4px;
+
+            /* box-sizing: border-box; */
+
+            /* 字体 */
+            font-family: 'Lato', sans-serif;
+            color: rgb(229, 221, 221);
+            transition: 1.5s;
+            
+
+            box-shadow: 3px 2px 3px;
+        }
+
+        /* 左上飘内容盒子 */
+        .top-Nav .third-Nav li
+        {
+            position: absolute;
+            list-style: none;
+
+            /* border: 2px solid rgb(130, 129, 130); */
+            height: 30px;
+            width: 380px;
+            
+            /* 居中 */
+            text-align: center;
+            line-height: 30px;
+
+            /* 边框圆角 */
+            border-radius: 8px;
+
+            /* 让li盒子向左飘 */
+            /* float: left; */
+
+            /* 控制li盒子之间的距离 */
+            
+            margin: -56px 159px;
+
+            /* box-sizing: border-box; */
+
+            /* 字体 */
+            font-family: 'LiSu', sans-serif;
+            color: rgb(229, 221, 221);
+            
+            font-weight: bolder;
+            font-size: 25px;
+
+
+            transition: 1.5s;
+        }
+
+        
+        /* 控制第五个li盒子的宽度，把字放进去 */
+        .top-Nav .second-Nav li:nth-child(5)
+        {
+            width: 100px;
+        }
+
+        /* 右飘盒子 */
+        .top-Nav .second-Nav li:hover
+        {
+            cursor: pointer;
+            background-color: rgb(103, 105, 105);
+        }
+        /* 左飘盒子 */
+        /* .top-Nav .third-Nav li:hover{
+            cursor: pointer;
+            background-color: rgb(103, 105, 105);
+        } */
+
+        /* 顶部导航栏——精灵logo图 */
+        .top-Nav .third-Nav span
+        {
+            position: absolute;
+            top: 1px;
+            left: 170px;
+
+            background-image: url(../images/精灵图1.jpg);
+            background-position:-33px -106px;
+
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            /* background-color: #d45d5d; */
+
+            /* 变成一个圆 */
+            border-radius: 50%;
+        }

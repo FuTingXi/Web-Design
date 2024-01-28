@@ -1,0 +1,21 @@
+/* 星星的形状以及运行状态 */
+.stars span {
+    position: absolute;
+    width: calc(var(--size) * 1px);
+    height: calc(var(--size) * 4px);
+    border-radius: 50%;
+    background-color: white;
+    filter: opacity(var(--opacity));
+    top: -5vh;
+    left: calc(var(--left) * 1vw);
+    animation: star-move linear infinite;
+    animation-duration: calc(var(--duration) * 1s);
+    animation-delay: calc(var(--delay) * 1s);
+}
+
+/* 星星覆盖的网页范围 */
+@keyframes star-move {
+    to {
+        top: 1000px;
+    }
+}

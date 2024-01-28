@@ -1,0 +1,70 @@
+.move {
+
+    /* 父亲定位显示，便于子代li定位 */
+    /* margin-top: 200px;
+    margin-left: 1250px;
+    padding: 34px 28px 14px;
+     */
+    /* 父亲盒子ul的大小 */
+    width: 75px;
+    height: 216px;
+    
+    /* ul 的边框线 */
+    border: 2px solid rgb(23, 20, 20);
+    background-color:rgba(135, 130, 130, 0.548);
+    
+    /* 边框圆角效果 */
+    border-radius: 40px 0;
+
+    /*固定住父亲盒子的位置，为后期锚点效果做准备*/
+    position: fixed;
+    right: 77px;
+    top: 277px;
+}
+
+.move .side li {
+    /* 定个位 */
+    
+    padding:5px 6px;
+    margin-left:-33px;
+    margin-top: 0px;
+    
+    /* 去点 */
+    list-style: none;
+    
+    /* 把所有li变成块级 */
+    display:block;
+    background-color: #c0dbdb;
+    
+    /* 控制li盒子的大小 */
+    width:60px;
+    height: 60px;
+
+    /* 保证盒子不被内容撑大 */
+    box-sizing: border-box;
+
+    /* li每一个盒子底部的边框线 */
+    border-bottom: 2px solid rgb(9, 30, 36);
+
+    /* 边框圆角效果 */
+    border-radius: 20px 0;
+    
+}
+
+.move li a {
+    /* 超链接去下划线，改颜色 */
+    text-decoration: none;
+    color: black;
+}
+
+/* 鼠标悬停在 li 上时的效果 */
+.move .side li:hover{
+    background-color: #b081aa;
+    transition: 3s;
+}
+
+
+/* 章节显示盒子的背景
+.move div {
+    background-color: rgb(27, 26, 26);
+} */

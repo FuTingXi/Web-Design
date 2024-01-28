@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index—FTX</title>
+    <link rel="stylesheet" href="./css/中间新闻栏.css">
+    <link rel="stylesheet" href="./css/行走的人-新闻栏.css">
+    <link rel="stylesheet" href="./css/右侧锚点导航栏.css">
+    <link rel="stylesheet" href="./css/左导航栏.css">
+    <link rel="stylesheet" href="./css/锚点制作弹出菜单2.css">
+    <link rel="stylesheet" href="./css/顶部导航栏.css">
+    <link rel="stylesheet" href="./css/轮播图.css">
+	<link rel="stylesheet" href="./css/时钟.css">
+    <link rel="stylesheet" href="./css/右上角流星.css">
+    <link rel="stylesheet" href="./css/流星背景.css">
+
+    <link rel="shortcut icon" href="./images/04.jpg" type="image/x-icon">
+<style>
+		body{
+            /* background-image: url('images/宇宙03.jpg'); */
+            /* 网页背景颜色 */
+            /* background-size: cover; */
+            /* background-repeat: no-repeat; */
+            background: linear-gradient(black, midnightblue);
+            background-attachment: fixed;
+        }
+</style>
+
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+</head>
+
+<body>
+    <!-- 流星背景 -->
+    <div class="stars"></div>
+    
+    <!-- 右上角双流星 -->
+    <div class="loader">
+        <div class="face">
+            <div class="circle"></div>
+        </div>
+        <div class="face">
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <!-- 左上角时钟 -->
+    <div class="clock">
+        <div class="outer-clock-face">
+            
+            <div class="marking marking-one"></div>
+            <div class="marking marking-two"></div>
+            <div class="marking marking-three"></div>
+            <div class="marking marking-four"></div>
+
+            <div class="inner-clock-face">
+                <div class="hand hour-hand"></div>
+                <div class="hand min-hand"></div>
+                <div class="hand second-hand"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 轮播图 -->
+    <div class="swiper-list-stack swiper-list">	
+		<div class="swiper-main-stack swiper-main"></div>
+		<img id="prev-stack" class="btn leftBtn" src="./images/left.png" alt="">
+		<img id="next-stack" class="btn rightBtn" src="./images/right.png" alt="">
+	</div>
+
+    <!-- 顶部导航栏----右飘 -->
+    <div class="top-Nav">
+        <ul class="second-Nav">
+            <li><a href="contact_us.html">联系我们</a></li>
+            <li><a href="message_board.html">留言板</a></li>
+            <li><a href="error_404.html">帮助</a></li>
+            <li><a href="./login.html" target="_blank">登录/注册</a></li>
+            <li><a href="error_404.html">手机APP下载</a></li>
+	    <li><a href="introduce.html">介绍</a></li>
+        </ul>
+
+        <ul class="third-Nav">
+            <li>选择大于努力 你还是选择了我</li>
+            <span></span>
+        </ul>
+
+    </div>
+
+    <!-- 中间新闻栏 -->
+    <div class="fatherBox">
+        <li class="d1">
+            
+            <div class="a1">
+                <div class="img1"><img src="./images/宇宙01.jpg" alt=""></div>
+                <a href="#"><span>Earth</span></a>
+                <a href="https://baijiahao.baidu.com/s?id=1737833193571942630" target="_blank"><p>详情></p></a>
+                <a href="#"><h5>地球之眼</h5></a>
+            </div>
+        </li>
+
+        <li>
+            <div class="a1">
+                <div class="img1"><img src="./images/宇宙02.jpg" alt=""></div>
+                <a href="#"><span>Universe</span></a>
+                <a href="https://cn.bing.com/images/search?q=%e5%ae%87%e5%ae%99&qpvt=%e5%ae%87%e5%ae%99&form=IGRE&first=1" target="_blank"><p>详情></p></a>
+                <a href="#"><h5>浩瀚宇宙</h5></a>
+            </div>
+        </li>
+
+        <li>
+            <div class="a1">
+                <div class="img1"><img src="./images/宇宙03.jpg" alt=""></div>
+                <a href="#"><span>Nebula</span></a>
+                <a href="https://cn.bing.com/images/search?q=%e6%98%9f%e4%ba%91&qpvt=%e6%98%9f%e4%ba%91&form=IGRE&first=1" target="_blank"><p>详情></p></a>
+                <a href="#"><h5>星云</h5></a>
+            </div>
+        </li>
+        <li>
+            <div class="a1">
+                <div class="img1"><img src="./images/圣诞节.jpg" alt=""></div>
+                <a href="#"><span>Christmas</span></a>
+                <a href="https://baike.baidu.com/item/%E5%9C%A3%E8%AF%9E%E8%8A%82/127881" target="_blank"><p>详情></p></a>
+                <a href="#"><h5>Happy Christians</h5></a>
+            </div>
+        </li>
+    </div>
+
+    <!-- 行走的人-新闻栏 -->
+    <div class="man">
+        <span class="head"></span>
+        <span class="body"></span>
+        <span class="feet"></span>
+    </div>
+
+    <!-- 右侧锚点导航栏 -->
+    <div class="move">
+        <ul  class="side">  
+           <li class="one"><a href="https://www.ynni.edu.cn/web/11403/home" target="_blank">YMU<br>官网</a></li>
+           <li><a href="heart.html" target="_blank">谢谢<br>观看!</a></li>
+           <li><a href="#top">返回<br>顶部^</a></li>
+       </ul>
+    </div>
+
+    <!-- 左导航栏 -->
+    <section class="nav-5">
+        <ul>
+          <li><a href="contact_us.html" data-hover="双喜"><span>博客</span></a></li>
+          <li><a href="novel.html" data-hover="小说"><span>文章</span></a></li>
+          <li><a href="钢铁侠.html" data-hover="钢铁侠"><span>猜猜</span></a></li>
+          <li><a href="../../动画特效/3D.html" data-hover="3D"><span>炫酷</span></a></li>
+        </ul>
+      </section>
+
+    <!-- 锚点制作弹出菜单2-->
+    <div class="Father">
+
+        <ul class="menu">
+            <li><a href="#m1">图片</a></li>
+            <li><a href="#m2">音乐</a></li>
+            <li><a href="#m3">热点</a></li>
+            <li><a href="#m4">小说</a></li>
+            <div class="animation"></div>
+        </ul><br>
+   
+        <!-- 鼠标悬停时的弹出菜单（装内容的盒子） -->
+        <ul class="popMenu">
+            <li id="m1" ><a href="http://yn.news.cn/original/2023-03/18/c_1310703699.htm" target="_blank"><img src="./images/樱花01.jpg" alt=""></a></li>
+            <li id="m2" ><video src="./videos/想见你.mp4" controls></video></li>
+            <li id="m3"><a href="http://www.news.cn/politics/2023-04/11/c_1129513833.htm" target="_blank"><img src="././images/樱花02.jpg" alt=""></a></li>
+            <li id="m4"><a href="https://novel.tingroom.com/" target="_blank"><img src="./images/樱花03.jpg" alt=""></a></li>
+        </ul>
+    </div>
+    
+</body>
+
+<!-- 轮播图js实现 -->
+<script src="./js/slider.js"></script>
+<script>
+	// 图片数组，包含多个对象，每个对象代表一张图片，包括图片的URL和路径
+	let imgArr = [{
+			url: '#',
+			imgPath: './images/01.jpg'
+		},
+		{
+			url: '#',
+			imgPath: './images/02.jpg'
+		},
+		{
+			url: '#',
+			imgPath: './images/03.jpg'
+		},
+		{
+			url: '#',
+			imgPath: './images/04.jpg'
+		},
+		{
+			url: '#',
+			imgPath: './images/05.jpg'
+		}
+	];
+
+	// 创建一个名为 Swiper 的新对象，并传入配置参数
+	new Swiper({
+		imgArr: imgArr,       // 图片数组，包含图片的URL和路径
+		imgWidth: 320,        // 图片宽度
+		aniTime: 1000,        // 动画过渡时间
+		intervalTime: 150,   // 图片切换间隔时间
+		scale: 0.8,           // 图片缩放比例
+		autoplay: true,      // 是否自动播放
+		gap: -200,            // 图片间距
+		clsSuffix: '-stack'   // 类名后缀
+	}).init();               // 执行初始化方法
+</script>
+
+<!--背景流星js  -->
+<script>
+
+    // 定义星星的数量常量
+    const COUNT_OF_STARS = 30;
+
+    // 使用D3选择具有类名'stars'的元素
+    d3.select('.stars')
+        .selectAll('span')  // 选择'.stars'元素内的所有'span'元素
+
+        // 将数据绑定到所选元素，使用从0到COUNT_OF_STARS的数字范围
+        .data(d3.range(COUNT_OF_STARS))
+
+        // 对于每个数据点，进入选择并追加一个'span'元素
+        .enter()
+        .append('span')
+
+        // 将'--left' CSS变量的样式属性设置为1到100之间的随机值
+        .style('--left', () => Math.ceil(Math.random() * 100))
+
+        // 将'--size' CSS变量的样式属性设置为1到2.5之间的随机值
+        .style('--size', () => Math.random() * 1.5 + 1)
+
+        // 将'--opacity' CSS变量的样式属性设置为0.5到0.8之间的随机值
+        .style('--opacity', () => Math.random() * 0.3 + 0.5)
+
+        // 将'--duration' CSS变量的样式属性设置为1到3之间的随机值
+        .style('--duration', () => Math.random() * 2 + 1)
+
+        // 根据索引设置'--delay' CSS变量的样式属性，以创建错开效果
+        .style('--delay', (d) => d * -0.05);
+</script>
+
+<!-- 时钟 -->
+<script>
+    const secondHand = document.querySelector('.second-hand')
+    const minHand = document.querySelector('.min-hand')
+    const hourHand = document.querySelector('.hour-hand')
+    // console.log(secondHand);
+
+function setTime(){
+    const now = new Date()
+    //获取当前的秒数
+    const seconds = now.getSeconds()
+    const secondsDegrees = seconds * 6 + 90//从90°开始旋转
+    secondHand.style.transform = `rotate(${secondsDegrees}deg)`
+    //获取当前的分钟
+    const minutes = now.getMinutes()
+    const minutesDegrees = minutes * 6 + 90
+    minHand.style.transform = `rotate(${minutesDegrees}deg)`
+    //获取当前的时针
+    const hour = now.getHours()
+    const hoursDegrees = hour *30 + 90 + (minutes/60)*30
+    hourHand.style.transform = `rotate(${hoursDegrees}deg)`
+}
+setTime()
+setInterval(setTime, 1000)
+</script>
+
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>introduce</title>
+    <style>
+        body {
+    /* 网页背景颜色 */
+    background: linear-gradient(to right, rgb(126, 161, 177) 0%, rgb(161, 192, 207) 50%, rgb(238, 163, 192) 100%);
+}
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .center {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto auto;
+        }
+
+        .maxDiv {
+            /* 3D透视效果 */
+            perspective: 1200px;
+            width: 1000px;
+            height: 1000px;
+            position: relative;
+            top: 150px;
+            left: 450px;
+        }
+
+        .minDiv {
+            /* 单个面的大小 */
+            width: 150px;
+            height: 150px;
+            transform-style: preserve-3d;
+            /* 旋转动画 */
+            animation: go 8s linear infinite;
+        }
+
+        .minDiv > div {
+            width: 150px;
+            height: 150px;
+            box-shadow: 0 0 15px;
+            position: absolute;
+            transition: 1s;
+            /* 动画播放状态为运行 */
+            animation-play-state: running;
+        }
+
+        /* 鼠标悬停时暂停动画 */
+        .minDiv:hover {
+            animation-play-state: paused;
+        }
+
+        /* 鼠标悬停时改变颜色动画 */
+        .minDiv:hover > div {
+            animation: goColor 3s linear forwards;
+        }
+
+      /* 对第一个子元素进行变换，使其沿着 Z 轴平移 -75px */
+        .minDiv > div:nth-child(1) {
+            transform: translateZ(-75px);
+        }
+
+        /* 对第二个子元素进行变换，使其绕 Y 轴旋转 90 度并沿 Z 轴平移 75px */
+        .minDiv > div:nth-child(2) {
+            transform: rotateY(90deg) translateZ(75px);
+        }
+
+        /* 对第三个子元素进行变换，使其绕 Y 轴旋转 90 度并沿 Z 轴平移 -75px */
+        .minDiv > div:nth-child(3) {
+            transform: rotateY(90deg) translateZ(-75px);
+        }
+
+        /* 对第四个子元素进行变换，使其绕 X 轴旋转 90 度并沿 Z 轴平移 -75px */
+        .minDiv > div:nth-child(4) {
+            transform: rotateX(90deg) translateZ(-75px);
+        }
+
+        /* 对第五个子元素进行变换，使其绕 X 轴旋转 90 度并沿 Z 轴平移 75px */
+        .minDiv > div:nth-child(5) {
+            transform: rotateX(90deg) translateZ(75px);
+        }
+
+        /* 对第六个子元素进行变换，使其沿着 Z 轴平移 75px */
+        .minDiv > div:nth-child(6) {
+            transform: translateZ(75px);
+        }
+
+        /* 鼠标悬停时改变位置动画 */
+        /* 对第一个子元素进行变换，使其沿着 Z 轴平移 -150px */
+        .minDiv:hover > div:nth-child(1) {
+            transform: translateZ(-150px);
+        }
+
+        /* 对第三个子元素进行变换，使其绕 Y 轴旋转 90 度并沿 Z 轴平移 -150px */
+        .minDiv:hover > div:nth-child(3) {
+            transform: rotateY(90deg) translateZ(-150px);
+        }
+
+        /* 对第四个子元素进行变换，使其绕 X 轴旋转 90 度并沿 Z 轴平移 -150px */
+        .minDiv:hover > div:nth-child(4) {
+            transform: rotateX(90deg) translateZ(-150px);
+        }
+
+        /* 对第二个子元素进行变换，使其绕 Y 轴旋转 90 度并沿 Z 轴平移 150px */
+        .minDiv:hover > div:nth-child(2) {
+            transform: rotateY(90deg) translateZ(150px);
+        }
+
+        /* 对第五个子元素进行变换，使其绕 X 轴旋转 90 度并沿 Z 轴平移 150px */
+        .minDiv:hover > div:nth-child(5) {
+            transform: rotateX(90deg) translateZ(150px);
+        }
+
+        /* 对第六个子元素进行变换，使其沿着 Z 轴平移 150px */
+        .minDiv:hover > div:nth-child(6) {
+            transform: translateZ(150px);
+        }
+
+        /* 定义 span 子元素的样式 */
+        .minDiv>span {
+            display: block;
+            height: 50px;
+            width: 50px;
+            transform-style: preserve-3d;
+        }
+
+        /* 鼠标悬停时对 span 子元素应用名为 "go" 的动画，持续时间 4 秒，线性变化，无限循环 */
+        .minDiv:hover >span {
+            animation: go 4s linear infinite;
+        }
+
+        /* 定义 span 子元素中的 div 子元素的样式 */
+        .minDiv>span>div {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            box-shadow: 0 0 10px rgba(156, 225, 27, 0.2);
+        }
+
+        /* 对 span 子元素中的第一个 div 子元素进行变换，使其沿着 Z 轴平移 -25px */
+        .minDiv>span>div:nth-child(1) {
+            transform: translateZ(-25px);
+        }
+
+        /* 对 span 子元素中的第二个 div 子元素进行变换，使其绕 Y 轴旋转 90 度并沿 Z 轴平移 25px */
+        .minDiv>span>div:nth-child(2) {
+            transform: rotateY(90deg) translateZ(25px);
+        }
+
+        /* 对 span 子元素中的第三个 div 子元素进行变换，使其绕 Y 轴旋转 90 度并沿 Z 轴平移 -25px */
+        .minDiv>span>div:nth-child(3) {
+            transform: rotateY(90deg) translateZ(-25px);
+        }
+
+        /* 对 span 子元素中的第四个 div 子元素进行变换，使其绕 X 轴旋转 90 度并沿 Z 轴平移 -25px */
+        .minDiv>span>div:nth-child(4) {
+            transform: rotateX(90deg) translateZ(-25px);
+        }
+
+        /* 对 span 子元素中的第五个 div 子元素进行变换，使其绕 X 轴旋转 90 度并沿 Z 轴平移 25px */
+        .minDiv>span>div:nth-child(5) {
+            transform: rotateX(90deg) translateZ(25px);
+        }
+
+        /* 对 span 子元素中的第六个 div 子元素进行变换，使其沿着 Z 轴平移 25px */
+        .minDiv>span>div:nth-child(6) {
+            transform: translateZ(25px);
+        }
+
+        /* 定义名为 "goColor" 的关键帧动画 */
+        @keyframes goColor {
+            0% {
+                opacity: 0.5;
+                box-shadow: 0 0 15px rgba(118,2,253,0.1);
+            }
+
+            50% {
+                opacity: 0.7;
+                box-shadow: 0 0 15px rgba(118,2,253,0.2);
+            }
+
+            100% {
+                opacity: 0.5;
+                box-shadow: 0 0 15px rgba(118,2,253,0.1);
+            }
+        }
+
+        /* 定义名为 "go" 的关键帧动画 */
+        @keyframes go {
+            100% {
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+
+        /* 选择所有嵌套的 div 元素中的 img 元素，并设置其宽度为 100%、高度为 100%、背景重复方式为不重复、背景大小为覆盖 */
+        div div img {
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* 选择所有 h2 元素，并设置其左边距为 400px、顶部边距为 100px */
+        h2 {
+            margin-left: 400px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<div class="maxDiv center">
+    <div class="minDiv">
+        <div><img src="./images/01.jpg"></div>
+        <div><img src="./images/02.jpg"></div>
+        <div><img src="./images/03.jpg"></div>
+        <div><img src="./images/04.jpg"></div>
+        <div><img src="./images/05.jpg"></div>
+        <div><img src="./images/06.jpg"></div>
+        <span class="center">
+            <div><img src="./images/01.jpg"></div>
+            <div><img src="./images/02.jpg"></div>
+            <div><img src="./images/03.jpg"></div>
+            <div><img src="./images/04.jpg"></div>
+            <div><img src="./images/05.jpg"></div>
+            <div><img src="./images/06.jpg"></div>
+         </span>
+    </div>
+</div>
+</html>

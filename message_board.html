@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>留言板</title>
+    <style>
+          body{
+            /* 网页背景颜色 */
+            background: linear-gradient(to right, rgb(126, 161, 177) 0%,rgb(161, 192, 207) 50%,rgb(238, 163, 192) 100%);
+        }
+
+        ul{
+            margin: 0;
+            border-radius: 20px;
+            list-style: none;    
+            /* border: 2px solid purple;       */
+            
+        }
+        h2{
+            text-align: center;            
+        }
+        .comments,.viewCom{
+            margin: 20px auto;
+            width:80%;
+            text-align: center;
+            
+            }
+
+            /* 两个按钮 */
+        .btnBox input{
+            margin: 20px;
+            width:160px;
+            height: 50px;
+/*            background: url("img/tree.jpg") 0 -30px no-repeat;*/
+            color:rgb(38, 38, 21);
+            font-size: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+        .btnBox input:hover{
+            background-color: blue;
+            transition: 2s;
+
+        }
+
+        /* 按钮下面两个内容框 */
+        #viewComment1,#viewComment2{
+            padding: 30px;
+            width:500px;
+            height: 300px;
+            border:1px solid #999;
+            border: 2px solid black;
+        }
+        .viewCom{
+            display: flex;
+            justify-content: space-around;
+            text-align: left;
+        }
+
+        /* 日历 */
+        .calendar{
+            position: relative;
+            top: -800px;
+            left: 400px;
+        }
+        .calendar p{
+            font-size: 22px;
+        }
+
+        .calendar p:nth-child(1){
+            font-size: 30px;
+        }
+        .viewCom #viewComment1{
+            background-image: url(./images/01.jpg);
+            background-size: cover;
+        }
+        .viewCom #viewComment2{
+            background-image: url(./images/04.jpg);
+            background-size: cover;
+        }
+
+        /* 实时时间 */
+        .time{
+            position: relative;
+            top: 377px;
+            left: 570px;
+            font-size: 20px;
+            /* background-color: black; */
+            /* width: 220px; */
+        
+        }
+    </style>
+</head>
+
+<body onload="getCurrentTime()">
+    <!-- 时间显示 -->
+    <div class="time">
+    <font color="red"><span id="nowSpan"></span></font> 
+    </div>
+
+    <h2>留言板</h2>
+    <div class="comments">
+        <textarea name="" id="com" cols="50" rows="20" style="border-radius: 20px; border: 3px solid black;"></textarea>
+        <div class="btnBox">
+            <input type="button" id="pub" value="发表">
+            <input type="button" id="cls" value="清除">
+            <a href="index.html"><input type="button" id="pub" value="返回首页"></a>
+        </div>
+    </div>
+    <div class="viewCom">    
+     <ul id="viewComment1"></ul>
+     <ul id="viewComment2"></ul>    
+    </div>
+
+ 
+    <script>
+        var oTxt = document.querySelector("#com");  // 获取留言输入框元素
+        var oPub = document.querySelector("#pub");  // 获取发布按钮元素
+        var oCls = document.querySelector("#cls");  // 获取清空按钮元素
+        var oVm1 = document.querySelector("#viewComment1");  // 获取留言展示区域1元素
+        var oVm2 = document.querySelector("#viewComment2");  // 获取留言展示区域2元素
+            
+        oPub.onclick = function () {
+            if (oTxt.value == "") {
+                alert("留言不能为空");
+            } else {
+                var oLi = document.createElement("li");
+                oLi.innerHTML = oTxt.value + '<a href="#" class="delete">删除</a>';
+                oVm1.appendChild(oLi);
+                oTxt.value = ""; // 清空输入框内容
+                attachDeleteEvent(oLi); // 添加删除事件
+            }
+        }
+    
+        // 添加删除事件的函数
+        function attachDeleteEvent(element) {
+            var deleteLink = element.querySelector('.delete');
+            if (deleteLink) {
+                deleteLink.onclick = function () {
+                    // 删除父节点（即 <li> 元素）
+                    element.parentNode.removeChild(element);
+                };
+            }
+        }
+    </script>
+
+<!-- 实时时间 -->
+    <script language="JavaScript">
+        function getCurrentTime()   
+        {   
+
+        var today=new Date();//定义日期对象   
+
+        var yyyy = today.getFullYear();//通过日期对象的getFullYear()方法返回年    
+
+        var MM = today.getMonth()+1;//通过日期对象的getMonth()方法返回月    
+
+        var dd = today.getDate();//通过日期对象的getDate()方法返回天     
+
+        var hh=today.getHours();//通过日期对象的getHours方法返回小时   
+
+        var mm=today.getMinutes();//通过日期对象的getMinutes方法返回分钟   
+
+        var ss=today.getSeconds();//通过日期对象的getSeconds方法返回秒   
+
+            
+
+        MM=checkTime(MM);
+
+        dd=checkTime(dd);
+
+        mm=checkTime(mm);   
+
+        ss=checkTime(ss);    
+
+        var day; //用于保存星期（getDay()方法得到星期编号）
+
+        if(today.getDay()==0)   day   =   "星期日 " 
+
+        if(today.getDay()==1)   day   =   "星期一 " 
+
+        if(today.getDay()==2)   day   =   "星期二 " 
+
+        if(today.getDay()==3)   day   =   "星期三 " 
+
+        if(today.getDay()==4)   day   =   "星期四 " 
+
+        if(today.getDay()==5)   day   =   "星期五 " 
+
+        if(today.getDay()==6)   day   =   "星期六 " 
+
+        document.getElementById('nowSpan').innerHTML=yyyy+"-"+MM +"-"+ dd +" " + hh+":"+mm+":"+ss+"   " + day;   
+
+        setTimeout('getCurrentTime()',1000);//每一秒中重新加载getCurrentTime()方法 
+
+    }   
+
+
+    //当分钟，月份，天数 小于10时是 9->09  补0函数
+        function checkTime(i)   
+
+        {   
+
+            if (i<10){
+
+                i="0" + i;
+
+            }   
+            return i;
+        }  
+
+   </script>
+</body>
+</html>

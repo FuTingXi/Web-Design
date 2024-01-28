@@ -1,0 +1,188 @@
+.Father a{
+    text-decoration: none;
+    color: rgb(215, 197, 197);
+
+    /* 做滑动按钮时的对a标签的关键语句 */
+    display: inline-block;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.Father li{
+    list-style: none;
+}
+
+
+.Father {
+    /* 先给父亲盒子一个边框便于后代盒子的排版 */
+    border: 2px solid rgb(19, 1, 1);
+    width: 500px;
+    height: 350px;
+    background-color: rgb(155, 206, 187);
+    background-image: url(../images/宇宙08.jpg);
+    background-size:cover;
+
+    /* 给父亲一个相对定位，让儿子们以自己为基准 */
+    position: relative;
+    top: -83px;
+    /* left: 302px; */
+
+    margin: 0 auto;
+
+    border-radius: 20px;
+
+    box-shadow: 10px 10px 10px 5px gray;
+    
+}
+
+
+.menu li{
+    /* 居中语句 */
+    text-align: center;
+    line-height: 30px;
+
+    /* 控制li盒子的大小 */
+    width: 50px;
+    height: 30px;
+    display: block;
+
+    /* 灵活布局定位关键语句*/
+    float: left;
+    display: flex;
+    justify-content:space-around;
+    margin: 0 25px;
+
+    /* 边框线 */
+    border: 2px solid rgb(124, 111, 126);
+
+    border-radius: 10px 10px;
+}
+
+/* 鼠标放到导航li盒子上时显示的效果 */
+/* .menu li:hover{
+    background-color: rgb(157, 198, 59);
+    transition: 2s;
+} */
+
+
+.popMenu li{
+    /* 控制盒子的大小 */
+    width:382px;
+    height: 270px;
+
+    /* 弹出窗口的所有li盒子相对于father盒子定位上去 */
+    position: absolute;
+    
+    /* 对弹出菜单中的内容区域进行居中 */
+    margin: 0 15px;
+
+    /* 边框线修饰 */
+    border: 1px solid black;
+
+    /* 不透明度为0相当于一开始隐藏弹出的li盒子 */
+    opacity: 0;
+
+}
+
+
+/* 对id选择器对应的不同的li盒子提供颜色 */
+#m1{
+    background: rgb(225, 181, 71); 
+             
+}
+#m2{
+    background: rgb(84, 90, 96);            
+}
+#m3{
+    background: rgb(19, 21, 218);            
+}
+#m4{
+    background: rgb(110, 78, 149);            
+}
+
+/* 当鼠标点击id选择器时，定位的地方所产生的变化 
+   注意和hover伪类鼠标放上去区分
+*/
+#m1:target{
+    background-color: aqua;
+
+    /* 当鼠标点击m1的id选择器时就显示变化后的效果 */
+    /* opacity不透明度变为1表示显示该内容快 */
+    opacity: 1;
+    z-index: 1;
+    
+    /* 持续时间以及边框修饰 */
+    transition: 3s;
+    border-radius: 30px 30px;
+    /* filter: blur(1); */
+}
+#m2:target{
+    background-color: rgb(131, 227, 96);
+    opacity: 1;
+    z-index: 1;
+    transition: 3s;
+    border-radius: 30px 30px;
+}
+#m3:target{
+    background-color: aqua;
+    opacity: 1;
+    z-index: 1;
+    transition: 3s;
+    border-radius: 30px 30px;
+}
+#m4:target{
+    background-color: rgb(246, 52, 152);
+    opacity: 1;
+    z-index: 1;
+    transition: 3s;
+    border-radius: 30px 30px;
+}
+
+
+/* 做滑动按钮时的关键语句 */
+.animation{
+    position:absolute;
+    
+    height: 30px;
+    top: 17px;
+    z-index: 0;
+    transition: 1s;
+    border-radius: 10px 10px;
+    width: 50px;
+    left: 67px;
+    background-color: rgba(210, 112, 112, 0.723);
+}
+
+/* 按钮移动时的效果显示转化 */
+li:nth-child(1):hover~.animation{
+    left: 67px;
+    background-color: aqua;
+}
+li:nth-child(2):hover~.animation{
+    left: 171px;
+    background-color: rgb(131, 227, 96);
+}
+li:nth-child(3):hover~.animation{
+    left: 275px;
+    background-color: aqua;
+}
+li:nth-child(4):hover~.animation{
+    left: 379px;
+    background-color: rgb(246, 52, 152);
+}
+
+.popMenu img {
+    /* 保证插入的图片和鼠标点击后要显示的区域大小一致 */
+    width:382px;
+    height: 270px;
+    border-radius:30px 30px;
+ }
+
+
+.popMenu video{
+    width:382px;
+    height: 270px;
+    border-radius:30px 30px;
+}
+

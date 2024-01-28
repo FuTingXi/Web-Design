@@ -1,0 +1,112 @@
+.clock{
+    width: 5rem;
+    height: 5rem;
+    border: 7px solid #0f268b;
+    border-radius: 50%;
+    box-shadow: -20px -4px 10px rgba(238, 230, 230, 0.1),
+                inset 4px 4px 10px rgba(168,145,128,0.6),
+                inset -4px -4px 10px rgba(134, 124, 117, 0.2),
+                4px 4px 10px rgba(235, 229, 225, 0.6);
+    background-image: url('./images/宇宙03.jpg');
+    background-repeat: no-repeat;
+    background-size: 111%;
+    padding: 15px;
+    position: absolute;
+    margin: 0px 20px;
+    
+}
+    .outer-clock-face{
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        position: relative;
+        
+    }
+    .outer-clock-face::before,
+    .outer-clock-face::after{
+        content: '';
+        width: 10px;
+        height: 100%;
+        background: #d1d1ea;
+        position: absolute;
+        border-radius: 8px;
+        left: 50%;
+        margin-left: -5px;
+    }
+    .outer-clock-face::after{
+        transform: rotate(90deg);
+        transform-origin: center center;
+    }
+    .marking{
+        width: 3px;
+        height: 100%;
+        background: #c3cab8;
+        position: absolute;
+        left: 50%;
+        margin-left: -1.5px;
+    }
+    .marking-one{
+        transform: rotateZ(30deg);
+        transform-origin: center center;
+    }
+    .marking-two{
+        transform: rotateZ(60deg);
+        transform-origin: center center;
+    }
+    .marking-three{
+        transform: rotateZ(120deg);
+        transform-origin: center center;
+    }
+    .marking-four{
+        transform: rotateZ(150deg);
+        transform-origin: center center;
+    }
+    .inner-clock-face{
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 80%;
+        background-color: rgb(56, 45, 138);
+        z-index: 2;/*层级提高*/
+        border-radius: 50%;
+        background-image: url('./images/宇宙03.jpg');
+        background-size: 125%;
+    }
+    .inner-clock-face::before{
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: black;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+    }
+    .hand{
+        width: 50%;
+        height: 6px;
+        background: red;
+        border-radius: 6px;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        margin-top: -3px;
+        transform-origin: 100% 50%;
+        transform: rotate(90deg);
+    }
+    .hour-hand{
+        width: 30%;
+    }
+    .min-hand{
+        width: 40%;
+        height: 3px;
+        background: yellow;
+    }
+    .second-hand{
+        background: grey;
+        width: 45%;
+        height: 2px;
+    }

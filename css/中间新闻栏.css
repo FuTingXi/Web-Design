@@ -1,0 +1,114 @@
+.fatherBox {
+
+    margin: 0 auto;
+
+    /* 给父亲一个大小，方便后面对其布局 */
+    border: 2px solid black;
+    width: 800px;
+    height: 400px;
+    background-image: url(../images/宇宙04.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 -100px;
+    /* background-color: rgba(64, 95, 234, 0.267); */
+
+     /* 给父亲一个相对定位，让儿子们以自己为基准 */
+     position: relative;
+     top: 155px;
+
+     /* 灵活布局 */
+     display: flex;
+    justify-content: space-around;
+
+    box-sizing: border-box;
+
+    /* 边框圆角 */
+    border-radius: 20px 20px;
+    
+}
+
+.fatherBox a {
+     text-decoration: none;
+     color: rgb(245, 241, 241);
+} 
+
+.fatherBox li{
+
+    list-style: none;
+
+    margin-top: 90px;
+
+    border: 2px solid rgb(130, 127, 130);
+    border-radius: 5px;
+    width: 180px;
+    height: 250px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    position: relative;
+}
+
+.fatherBox li>div{
+    border: 2px solid black;
+
+    width: 177px;
+    height: 180px;
+
+    /* background-image: url("../images/太阳神.jpg") ; */
+    /* background-size: cover;
+    background-repeat: no-repeat;
+    background-position: -25px; */
+
+    opacity: 1;
+
+    /* transition: 2s; */
+
+    position: absolute;
+}
+
+.fatherBox img{
+    width: 177px;
+    height: 180px;
+}
+.fatherBox li div div:hover img{
+    transition: 2s;
+    transform: scale(1.1);
+    opacity: 0.5;
+
+}
+
+/* 左下角字幕 */
+.fatherBox li a span{
+    position: absolute;
+    bottom: -60px;
+    left: 5px;
+    color: rgb(238, 235, 231);
+}
+
+/* 右下角详情 */
+.fatherBox li a p{
+    position:absolute;
+    right: 10px;
+    bottom: -75px; 
+}
+
+.fatherBox li div p:hover{
+    color: rgb(218, 28, 117);
+}
+
+.fatherBox li div span:hover{
+    color: rgb(218, 28, 117);
+}
+
+.fatherBox li div h5{
+    position: absolute;
+    top: 170px;
+    left: 15px;
+    
+    color: rgb(230, 147, 147);    
+}
+.fatherBox li div h5:hover{
+    color: rgb(218, 28, 117)
+}

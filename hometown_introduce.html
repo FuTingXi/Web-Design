@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+          body{
+            /* 网页背景颜色 */
+            background: linear-gradient(to right, rgb(126, 161, 177) 0%,rgb(161, 192, 207) 50%,rgb(238, 163, 192) 100%);
+        }
+            *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        }
+        a{
+            color: white;
+            text-decoration: none;
+        }
+        .more{
+            color: red !important;
+        }
+
+        .container{
+            width: 1200px;
+            margin: 0 auto;
+            overflow: hidden; 
+        }
+        .middle{
+            width: 3610px;
+            height: 430px;
+            animation: switch 5s ease-out infinite;
+        }
+        @keyframes switch {
+            0%, 25% {
+                margin-left: 0;
+            }
+            35%, 60% {
+                margin-left: -1205px;
+            }
+            70%, 100% {
+                margin-left: -2405px;
+            }
+        }
+        .middle img{
+            width:1200px;
+            height: 100%;
+        }
+
+        header{
+            height: 100px;
+            width: 1200px;
+            background:#669a98;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .nav{
+            width: 1200px;
+            height: 30px;
+            color: white;
+            font-weight: bold;
+            background:#669a98;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .nav span:hover,a:hover{
+            color: tomato ;
+            transform: scale(1.2);
+            transition: all 0.5s ;
+        }
+        .bottom{
+            width: 1200px;
+            margin: 0 auto;
+            height: 500px;
+            display: flex;
+            padding: 20px;
+            background: #fff6ef;
+            justify-content: space-between;
+        }
+        .left{
+            width: 20%;
+        }
+        .left1{
+            width: 100%;
+        }
+        .left1>img{
+            width: 100%;
+        }
+        .left2{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 1px;
+        }
+        .left2>img{
+            width: 49%;
+            margin: 1px auto;
+        }
+        .right{
+            width:75%;
+            padding-top: 30px;
+        }
+        h3{
+            color: #669a98;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .right1{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dashed #669a98;
+            padding-bottom: 10px;
+            margin-top: 15px;
+        }
+        .red{
+            color: red;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .closer{
+            margin: 0 auto;
+            width: 1200px;
+            height: 60px;
+            background: #669a98;
+            text-align: center;
+            line-height: 60px;
+            color: white;
+        }
+
+    </style>
+</head>
+
+<body>
+ 
+    <div class="container">
+    <div class="middle">
+      <img src="./images/大海草山1.jpg" alt="">
+      <img src="./images/樱花03.jpg" alt="">  
+      <img src="./images/会泽古城.jpg" alt="">   
+    </div>
+    </div>
+    <div class="nav">
+        <span><a href="index.html">首页</a></span>
+        <span><a href="https://www.mafengwo.cn/poi/6329846.html" target="_blank">介绍</a></span>
+        <span><a href="#">链接</a></span>
+        <span><a href="https://www.sohu.com/a/588287781_121123529">美食</a></span>
+    </div>
+
+    <div class="bottom">
+        <div class="left">
+        </div>
+
+        <!-- 正下方的景点介绍 -->
+        <div class="right">
+            <div class="right1">
+                <div>
+                    <h3>会泽大海草山——云南的“新西兰”</h3>
+                    <p>
+                        位于会泽县大海乡东南部，属乌蒙山系主峰段，草山地势平缓，广阔无垠，属亚高山草甸<br>
+                        面积18万亩，海拔在2570--4017米之间。春天山花烂漫，桀骜芳香； <br>
+                        夏天绿草茵茵，牛羊成群；秋天云淡天高，绿草水碧；冬天，群山银装素裹，万物银雕玉砌<br>
+                        集峰、草、水、光、花、云、雪、洞、情于一体的独特风貌，素有云南的“新西兰”之美誉。
+                    </p>
+                    <p class="red">
+                       <a href="https://www.mafengwo.cn/poi/6329846.html" class="more">查看更多》》</a>
+                    </p>
+                </div>
+                <div>
+                    <img src="./images/大海草山.jpg" alt="" style="width: 200px; height: 200px; position: relative; left: -900px;">
+                </div>
+            </div>
+            <div class="right1">
+                <div>
+                    <h3>会泽古城，位于云南省东北部，历史上曾是东川府所在地。“钱王之乡”，之所以有此美称，是因为一枚钱币。</h3>
+                    <p>“嘉靖通宝”，直径58厘米，厚3.7厘米，重达41.7公斤，是普通铜钱重量的一万倍左右，乃是世界上最大的铜钱，有着“钱王”之称。<br>
+                        而铸造和保存这枚铜钱的会泽，也就有了“钱王之乡”的美称。<br>
+                        据记载，这枚“嘉靖通宝”其实是一枚“纪念币”，明嘉靖三十四年，朝廷首次在会泽设立铸钱局，为纪念开炉，遂铸造出这枚巨大的铜钱。<br>
+                        后来便一直作为铸钱局的镇局之宝，悬于大门之上，以期望财富万年，长久不断。
+                    </p>
+                </div>
+                <div>
+                    <img src="./images/会泽铜钱.jpg" alt="" style="width: 200px; height: 200px; position: relative; left: -900px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="closer">
+        <a href="https://baike.baidu.com/item/%E4%BC%9A%E6%B3%BD%E5%8E%BF/704089">云南会泽</a>
+    </div>
+</body>
+</html>
